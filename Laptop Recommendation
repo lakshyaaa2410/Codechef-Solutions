@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    unordered_map<int, int> hMap;
+    ll maxRec = 0, shouldBuy = 0;
+
+    for (int i = 0; i < n; i++)   
+    {
+        int temp;
+        cin >> temp;
+
+        hMap[temp]++;
+    }
+
+    for (auto itr : hMap)
+    {
+        if (itr.second > maxRec)
+        {
+            maxRec = itr.second;
+            shouldBuy = itr.first;
+        }
+    }
+
+    bool isConfused = false;
+
+    for (auto itr : hMap)
+    {
+        if (itr.second == maxRec and shouldBuy != itr.first)
+            isConfused = true;
+    }
+
+    if (isConfused)
+        cout << "CONFUSED\n";
+    else
+        cout << shouldBuy << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
