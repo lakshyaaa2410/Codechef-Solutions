@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    double a, b;
+    cin >> a >> b;
+
+    char oper;
+    cin >> oper;
+
+    if (oper == '+')
+        cout << a + b << nline;
+    else if (oper == '-')
+        cout << a - b << nline;
+    else if (oper == '/')
+        cout << fixed << setprecision(8) << a / b << endl;
+
+    else
+        cout << fixed << setprecision(1) <<  a * b << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
