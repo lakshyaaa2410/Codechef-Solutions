@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, b;
+    cin >> n >> b;
+
+    ll canBuy = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        ll w, h, p;
+        cin >> w >> h >> p;
+
+        if (p <= b)
+        {
+            canBuy = max(canBuy, (w * h));
+        }
+    }
+
+    if (!canBuy)
+        cout << "no tablet\n";
+    else
+        cout << canBuy << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
