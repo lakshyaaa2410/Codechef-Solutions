@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    unordered_map<ll, ll> hMap;
+
+    for (int i = 0; i < n; i++)
+    {
+        ll t;
+        cin >> t;
+
+        hMap[t]++;
+    }
+
+    ll maxOcc = 0;
+
+    for (auto itr : hMap)
+    {
+        maxOcc = max(maxOcc, itr.second);
+    }
+
+    cout << n - maxOcc << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
