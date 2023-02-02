@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+#define MOD 1000000007
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+
+    ll cOf1 = 0, cOf0 = 0;
+
+    for (auto ch : s) {
+        if (ch == '1')
+            cOf1++;
+        else
+            cOf0++;
+    }
+
+    if (cOf1 > cOf0)
+    {
+        cout << 1 + cOf0 << nline;
+    }
+    else 
+        cout << cOf1 << nline;
+
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
