@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, d;
+    cin >> n >> d;
+
+    ll arr[n];
+    ll atRisk = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+
+        if (arr[i] >= 80 or arr[i] <= 9)
+            atRisk++;
+    }
+
+    ll safe = n - atRisk;
+    ll count = 0;
+
+    while (atRisk > 0)
+    {
+        count++;
+        atRisk -= d;
+    }
+
+    while (safe > 0)
+    {
+        count++;
+        safe -= d;
+    }
+
+    cout << count << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
