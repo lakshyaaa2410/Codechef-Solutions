@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    if (n % 5 == 0 and n % 11 == 0)   
+        cout << "BOTH\n";
+    else if (n % 5 == 0 or n % 11 == 0)
+        cout << "ONE\n";
+    else
+        cout << "NONE\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
