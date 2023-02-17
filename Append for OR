@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    ll n, k;
+    cin >> n >> k;
+
+    ll orOf = 0;    
+    bool flag = false;
+    for (int i = 0; i < n; i++)
+    {
+        ll t;
+        cin >> t;
+
+        orOf = (orOf | t);
+    }
+
+    for (int i = 0; i <= k; i++)
+    {
+        if ((orOf | i) == k)
+        {
+            cout << i << nline;
+            flag = true;
+            break;
+        }
+    }
+
+    if (flag == false)
+        cout << -1 << nline;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
