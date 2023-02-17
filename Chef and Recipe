@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+bool isContiguous(vector<ll> &arr, ll n)
+{
+    unordered_set<ll> hSet;
+
+    bool isContiguous = true;
+    for (int i = 0; i < n - 1; i++)
+    {
+        if (arr[i] != arr[i + 1]) {
+            if (hSet.find(arr[i]) != hSet.end())
+                isContiguous = false;
+            else
+                hSet.insert(arr[i]);
+        }
+    }
+
+    if (hSet.find(arr[n - 1]) != hSet.end())
+        isContiguous = false;
+
+    return isContiguous;
+}
+
+bool hasUnique(vector<ll> &arr, ll n)
+{
+    unordered_map<ll, ll> hMap;
+    unordered_set<ll> uniqueCheck;
+
+    for (int i = 0; i < n; i++)
+        hMap[arr[i]]++;
+
+    bool hasUnique = true;
+
+    for (auto itr : hMap)
+    {
+        if (uniqueCheck.find(itr.second) != uniqueCheck.end())
+            hasUnique = false;
+        uniqueCheck.insert(itr.second);
+    }
+
+    return hasUnique;
+
+
+
+}
+void solve()
+{
+    ll n;
+    cin >> n;
+
+    vector<ll> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    if (hasUnique(arr, n) and isContiguous(arr, n))
+        cout << "YES\n";
+    else
+        cout << "NO\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
