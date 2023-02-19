@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+void solve()
+{
+    string s;
+    cin >> s;
+
+    string a = "101", b = "010";
+
+    if (s.find(a) != string :: npos || s.find(b) != string :: npos)
+        cout << "Good\n";
+    else
+        cout << "Bad\n";
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
