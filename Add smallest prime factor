@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nline '\n'
+using namespace std;
+
+int spf(int x)
+{
+    for (int i = 3; i <= x; i++)
+        if (x % i == 0)
+            return i;
+}
+void solve()
+{
+    ll x, y;
+    cin >> x >> y;
+
+    if (x & 1)
+    {
+        int s = spf(x);
+        x += s;
+        if (x >= y)
+            cout << 1 << nline;
+        else
+            cout << (y - x + 1) / 2 + 1 << nline;
+    }
+    else
+    {
+        cout << (y - x + 1) / 2 << nline;
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll T = 1;
+    cin >> T;
+    while (T--) 
+    {
+        solve();
+    }
+
+}
